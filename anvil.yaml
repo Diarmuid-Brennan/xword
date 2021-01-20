@@ -1,4 +1,56 @@
-services: []
+services:
+- source: /runtime/services/google.yml
+  client_config:
+    app_files:
+    - capabilities: {canCopy: true, canEdit: true}
+      editable: true
+      copyable: true
+      webContentLink: https://drive.google.com/uc?id=1xJEprOb0yaU3Nzk_IREbqRaXz80_h4hS&export=download
+      embedLink: https://drive.google.com/file/d/1xJEprOb0yaU3Nzk_IREbqRaXz80_h4hS/preview?usp=drivesdk
+      fileExtension: ''
+      copyRequiresWriterPermission: false
+      python_name: words
+      explicitlyTrashed: false
+      lastModifyingUser: {kind: drive#user, displayName: Diarmuid Brennan, isAuthenticatedUser: true,
+        permissionId: '18349921081441634171', emailAddress: diarmuidbrennan32@gmail.com}
+      shared: false
+      createdDate: '2021-01-20T13:40:33.695Z'
+      id: 1xJEprOb0yaU3Nzk_IREbqRaXz80_h4hS
+      owners:
+      - {kind: drive#user, displayName: Diarmuid Brennan, isAuthenticatedUser: true,
+        permissionId: '18349921081441634171', emailAddress: diarmuidbrennan32@gmail.com}
+      markedViewedByMeDate: '1970-01-01T00:00:00.000Z'
+      spaces: [drive]
+      parents:
+      - {kind: drive#parentReference, id: 0AGJFN7678Z97Uk9PVA, selfLink: 'https://www.googleapis.com/drive/v2/files/1xJEprOb0yaU3Nzk_IREbqRaXz80_h4hS/parents/0AGJFN7678Z97Uk9PVA',
+        parentLink: 'https://www.googleapis.com/drive/v2/files/0AGJFN7678Z97Uk9PVA',
+        isRoot: true}
+      labels: {starred: false, hidden: false, trashed: false, restricted: false, viewed: true}
+      iconLink: https://drive-thirdparty.googleusercontent.com/16/type/application/octet-stream
+      headRevisionId: 0B2JFN7678Z97dDlpZ3MxbkFidWQwYTBMZXRkVkhxSTRUTEpJPQ
+      selfLink: https://www.googleapis.com/drive/v2/files/1xJEprOb0yaU3Nzk_IREbqRaXz80_h4hS
+      lastViewedByMeDate: '2021-01-20T13:40:33.695Z'
+      userPermission: {kind: drive#permission, etag: '"z5BztK5lZpGo6JS1D5SSh6iSjUE"',
+        id: me, selfLink: 'https://www.googleapis.com/drive/v2/files/1xJEprOb0yaU3Nzk_IREbqRaXz80_h4hS/permissions/me',
+        role: owner, type: user}
+      lastModifyingUserName: Diarmuid Brennan
+      etag: '"MTYxMTA3OTUxODAwMA"'
+      kind: drive#file
+      modifiedByMeDate: '2021-01-19T18:05:18.000Z'
+      title: words
+      version: '1'
+      appDataContents: false
+      writersCanShare: true
+      fileSize: '976241'
+      alternateLink: https://drive.google.com/file/d/1xJEprOb0yaU3Nzk_IREbqRaXz80_h4hS/view?usp=drivesdk
+      mimeType: application/octet-stream
+      modifiedDate: '2021-01-19T18:05:18.000Z'
+      downloadUrl: https://www.googleapis.com/drive/v2/files/1xJEprOb0yaU3Nzk_IREbqRaXz80_h4hS?alt=media&source=downloadUrl
+      quotaBytesUsed: '976241'
+      md5Checksum: 7d06f540d0a65a46e6d65c5254edb21f
+      originalFilename: words
+      ownerNames: [Diarmuid Brennan]
+  server_config: {delegation_refresh_token: 1//031Djxn1iNPtwCgYIARAAGAMSNwF-L9IrTkiKL7vgZEPJi3RIPfItLXXjKzVO3S0yi9J1MePFzpvYnUkKBZSf_ZQw4FZ8XWbDlbs}
 package_name: xword
 allow_embedding: false
 name: xword
