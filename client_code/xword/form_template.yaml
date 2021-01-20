@@ -1,0 +1,31 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{}'}
+    name: card_1
+    layout_properties: {grid_position: 'SGDYCQ,ERBXMB'}
+    components:
+    - type: TextBox
+      properties: {}
+      name: text_box_1
+      layout_properties: {grid_position: 'UEZVGR,QJWEQR'}
+    - type: Button
+      properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Check word, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: 'fa:search'}
+      name: check_word_button
+      layout_properties: {grid_position: 'XRKUCG,ANQWPD'}
+      event_bindings: {click: check_word_button_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
