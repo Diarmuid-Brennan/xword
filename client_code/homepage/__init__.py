@@ -15,8 +15,9 @@ class homepage(homepageTemplate):
     """This method is called when the button is clicked"""
     pattern = self.item['query']
     print(pattern)
-    content=anvil.server.call('find_possible_matches(pattern)')
-
+    result = set()
+    result = anvil.server.call('find_possible_matches(pattern)')
+    print(result)
  
 
 

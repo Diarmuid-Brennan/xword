@@ -2,13 +2,13 @@ import anvil.google.auth, anvil.google.drive, anvil.google.mail
 from anvil.google.drive import app_files
 import anvil.server
 
-f = app_files.words
-file = f.get_bytes()
-print(file)
-with open("file") as wf:
-    words = {line.strip("\n").strip("'s").lower() for line in wf}  # A set.
+file = str(app_files.words.get_bytes(), 'UTF-8')
+#print(file)
+file = file.split()
+words = {line.strip("\n").strip("'s").lower() for line in file}
+#print(type(words)) 
 words = sorted(words)[1:]  # Ignore the empty word at the start of the list.
-print(words)
+#print(words)
 
 @anvil.server.callable
 def find_possible_matches(pattern):
