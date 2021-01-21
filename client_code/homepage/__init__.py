@@ -1,10 +1,10 @@
-from ._anvil_designer import xwordTemplate
+from ._anvil_designer import homepageTemplate
 from anvil import *
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
 import anvil.server
 
-class xword(xwordTemplate):
+class homepage(homepageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -13,8 +13,10 @@ class xword(xwordTemplate):
 
   def check_word_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
-  
+    pattern = self.item['query']
+    print(pattern)
+    content=anvil.server.call('find_possible_matches(pattern)')
+
  
 
 
