@@ -28,7 +28,7 @@ components:
       layout_properties: {grid_position: 'XRKUCG,ANQWPD'}
       event_bindings: {click: check_word_button_click}
     - type: TextArea
-      properties: {}
+      properties: {height: 561}
       name: result_box
       layout_properties: {grid_position: 'OIHBSF,URMTNY'}
 - type: FlowPanel
