@@ -15,7 +15,11 @@ class homepage(homepageTemplate):
     """This method is called when the button is clicked"""
     pattern = self.query_box.text
     result = anvil.server.call('find_possible_matches',pattern)
-    print(result)
+    output = "Possible Pattern Matches"
+    for word in result:
+      print(word)
+      output += word
+    self.result_box.text = output
  
 
 
