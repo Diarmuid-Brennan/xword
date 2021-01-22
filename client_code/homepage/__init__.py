@@ -14,7 +14,6 @@ class homepage(homepageTemplate):
   def check_word_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     pattern = self.query_box.text
-    print(pattern)
     result = anvil.server.call('find_possible_matches',pattern)
     print(result)
  
