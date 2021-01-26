@@ -5,7 +5,8 @@ import anvil.server
 file = str(app_files.words.get_bytes(), 'UTF-8')
 #print(file)
 file = file.split()
-words = {line.strip("\n").strip("'s").lower() for line in file}
+#words = {line.strip("\n").strip("'s").lower() for line in file}
+words = {line.strip("\n").replace("'s",'').lower() for line in file}
 #print(type(words)) 
 words = sorted(words)[1:]  # Ignore the empty word at the start of the list.
 #print(words)
