@@ -16,8 +16,7 @@ class homepage(homepageTemplate):
     pattern = self.query_box.text
     result = anvil.server.call('find_possible_matches',pattern)
     print(len(result))
-  
-    print(result.pop().endswith("ing") == True)
+    print(result[-1])
     output = "Possible Pattern Matches\n"
     for word in result:
       output += word + "\n"
