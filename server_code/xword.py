@@ -29,3 +29,9 @@ def find_possible_matches(pattern):
         if len(word) == len(pattern) and match_pattern(word, pattern)  ## WHERE...
         ]
     return matches
+  
+  
+@anvil.server.http_endpoint('/pattern/:pat')
+def find_matches(pat, **q):
+  result = find_possible_matches(pat)
+  return result
