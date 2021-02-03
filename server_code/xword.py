@@ -39,9 +39,13 @@ def find_matches(pat, **q):
   return result
 
 @anvil.server.http_endpoint('/pattern/add', methods=["POST"])
-def find_matches(**q):
+def find_matches(insertword, **q):
   word = anvil.server.request.body_json['word']
-  if(len(find_possible_matches(word) == 0)):
+  word = find_possible_matches(word)
+  if(len(word) == 0):
+    print("Not Found")
     words.append(word)
     s1='\n'.join(words)
+    print(s1)
     app_files.words.set_bytes(s1)
+    return words
