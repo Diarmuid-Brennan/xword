@@ -7,9 +7,10 @@ file = str(app_files.words.get_bytes(), 'UTF-8')
 file = file.split()
 #words = {line.strip("\n").strip("'s").lower() for line in file}
 words = {line.strip("\n").replace("'s",'').lower() for line in file}
-#print(type(words)) 
+print(type(words)) 
 words = sorted(words)[1:]  # Ignore the empty word at the start of the list.
 #print(words)
+print(type(words))
 
 @anvil.server.callable
 def find_possible_matches(pattern):
@@ -31,14 +32,16 @@ def find_possible_matches(pattern):
     return matches
   
   
-@anvil.server.http_endpoint('/pattern/:pat')
+@anvil.server.http_endpoint('/pattern/:pat', methods=["POST"])
 def find_matches(pat, **q):
   pat = anvil.server.request.body_json['word']
   result = find_possible_matches(pat)
   return result
 
-@anvil.server.http_endpoint('/pattern/add')
-def find_matches(pat, **q):
-  pat = anvil.server.request.body_json['word']
-  result = find_possible_matches(pat)
-  return result
+@anvil.server.http_endpoint('/pattern/add', methods=["POST"])
+def find_matches(**q):
+  word = anvil.server.request.body_json['word']
+  if(len(find_possible_matches(word) == 0)):
+    words.append(word)
+    s1='\n'.join(words)
+    app_files.words.set_bytes(s1)
