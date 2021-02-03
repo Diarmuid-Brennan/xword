@@ -33,6 +33,12 @@ def find_possible_matches(pattern):
   
 @anvil.server.http_endpoint('/pattern/:pat')
 def find_matches(pat, **q):
-  print(type(pat))
+  pat = anvil.server.request.body_json['word']
+  result = find_possible_matches(pat)
+  return result
+
+@anvil.server.http_endpoint('/pattern/add')
+def find_matches(pat, **q):
+  pat = anvil.server.request.body_json['word']
   result = find_possible_matches(pat)
   return result
