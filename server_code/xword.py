@@ -33,5 +33,6 @@ def find_possible_matches(pattern):
   
 @anvil.server.http_endpoint('/pattern/:pat')
 def find_matches(pat, **q):
+  print(type(pat))
   result = find_possible_matches(pat)
   return result
