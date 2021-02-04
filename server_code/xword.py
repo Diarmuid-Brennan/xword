@@ -12,6 +12,7 @@ words = {line.strip("\n").replace("'s",'').lower() for line in file}
 newWords = {line.strip("\n").replace("'s",'').lower() for line in newWordfile}
 print(type(words)) 
 words = sorted(words)[1:]  # Ignore the empty word at the start of the list.
+newWords = sorted(newWords)
 #print(words)
 print(len(words))
 
@@ -40,17 +41,17 @@ def add_to_wordList(word):
   words.append(word)
   newWords.append(word)
   updated ='\n'.join(words)
-  newWordsUpdated ='\n'.join(words)
+  newWordsUpdated ='\n'.join(word)
   app_files.words.set_bytes(updated)
-  app_files.newWords.set_bytes(newWordsUpdated)
+  app_files.newwords_txt.set_bytes(newWordsUpdated)
   return words
   
   
-#@anvil.server.http_endpoint('/pattern/:pat', methods=["POST"])
-#def find_matches(pat, **q):
-#  pat = anvil.server.request.body_json['word']
-#   result = find_possible_matches(pat)
-#  return result
+@anvil.server.http_endpoint('/pattern/pat', methods=["POST"])
+def find_matches(**q):
+  pat = anvil.server.request.body_json['word']
+  result = find_possible_matches(pat)
+  return result
 
 
 @anvil.server.http_endpoint('/pattern/add', methods=["POST"])
