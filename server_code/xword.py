@@ -61,8 +61,10 @@ def find_matches(**q):
 @anvil.server.http_endpoint('/pattern/add', methods=["POST"])
 def find_matches(**q):
   word = anvil.server.request.body_json['word']
-  matches = find_possible_matches(word)
-  if(len(matches) == 0):
-    newlist = add_to_wordList(word)
-    return len(newlist)
+  for x in word:
+    matches = find_possible_matches(x)
+    if(len(matches) == 0):
+      newlist = add_to_wordList(x)
+      
+  #return len(newlist)
       
