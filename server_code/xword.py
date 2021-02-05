@@ -14,7 +14,6 @@ newWords = {line.strip("\n").replace("'s",'').lower() for line in newWordfile}
 
 words = sorted(words)[1:]  # Ignore the empty word at the start of the list.
 newWords = sorted(newWords)[1:]
-print(newWords)
 print(len(words))
 print(len(newWords))
 
@@ -43,7 +42,7 @@ def add_to_wordList(word):
   words.append(word)
   newWords.append(word)
   updated ='\n'.join(words)
-  newWordsUpdated ='\n'.join(word)
+  newWordsUpdated ='\n'.join(newWords)
   app_files.words.set_bytes(updated)
   app_files.newwords_txt.set_bytes(newWordsUpdated)
   return words
