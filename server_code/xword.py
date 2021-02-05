@@ -4,15 +4,17 @@ import anvil.server
 
 file = str(app_files.words.get_bytes(), 'UTF-8')
 newWordfile = str(app_files.newwords_txt.get_bytes(), 'UTF-8')
-#print(type(file))
+print(newWordfile)
 file = file.split()
 newWordfile = newWordfile.split()
+
 #words = {line.strip("\n").strip("'s").lower() for line in file}
 words = {line.strip("\n").replace("'s",'').lower() for line in file}
 newWords = {line.strip("\n").replace("'s",'').lower() for line in newWordfile}
 
 words = sorted(words)[1:]  # Ignore the empty word at the start of the list.
-newWords = sorted(newWords)
+newWords = sorted(newWords)[1:]
+print(newWords)
 print(len(words))
 print(len(newWords))
 
