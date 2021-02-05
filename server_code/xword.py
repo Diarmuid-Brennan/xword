@@ -10,11 +10,11 @@ newWordfile = newWordfile.split()
 #words = {line.strip("\n").strip("'s").lower() for line in file}
 words = {line.strip("\n").replace("'s",'').lower() for line in file}
 newWords = {line.strip("\n").replace("'s",'').lower() for line in newWordfile}
-print(type(words)) 
+
 words = sorted(words)[1:]  # Ignore the empty word at the start of the list.
 newWords = sorted(newWords)
-#print(words)
 print(len(words))
+print(len(newWords))
 
 @anvil.server.callable
 def find_possible_matches(pattern):
