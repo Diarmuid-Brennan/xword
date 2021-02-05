@@ -15,8 +15,8 @@ words = {line.strip("\n").replace("'s",'').lower() for line in file}
 
 newWords = {line.strip("\n").replace("'s",'').lower() for line in newWordfile}
 
-words = sorted(words)[1:]  # Ignore the empty word at the start of the list.
-newWords = sorted(newWords)[1:]
+words = sorted(words)  # Ignore the empty word at the start of the list.
+newWords = sorted(newWords)
 print(len(words))
 print(len(newWords))
 
