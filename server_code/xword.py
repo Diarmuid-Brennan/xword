@@ -66,5 +66,12 @@ def find_matches(**q):
     if(len(matches) == 0):
       newlist = add_to_wordList(x)
       
-  #return len(newlist)
+@anvil.server.http_endpoint('/pattern/stats')
+def find_matches(**q):
+  dictSize = len(words) - len(newWords)
+  stats = {
+    "original size" : dictSize,
+    "number of newWords" : len(newWords),
+  }
+  return stats
       
