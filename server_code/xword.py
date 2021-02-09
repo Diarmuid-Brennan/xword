@@ -51,22 +51,22 @@ def add_to_wordList(word):
   return words
   
   
-@anvil.server.http_endpoint('/pattern/pat', methods=["POST"])
-def find_matches(**q):
-  pat = anvil.server.request.body_json['word']
+@anvil.server.http_endpoint('/pattern/:pat')
+def find_matches(pat, **q): 
   result = find_possible_matches(pat)
   return result
 
 
-@anvil.server.http_endpoint('/pattern/add', methods=["POST"])
+@anvil.server.http_endpoint('/add', methods=["POST"])
 def find_matches(**q):
   word = anvil.server.request.body_json['word']
   for x in word:
     matches = find_possible_matches(x)
     if(len(matches) == 0):
       newlist = add_to_wordList(x)
+  return len(words)
       
-@anvil.server.http_endpoint('/pattern/stats')
+@anvil.server.http_endpoint('/stats')
 def find_matches(**q):
   dictSize = len(words) - len(newWords)
   stats = {
